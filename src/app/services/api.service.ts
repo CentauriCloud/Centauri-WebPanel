@@ -63,6 +63,7 @@ export class ApiService {
   }
 
   /**
+   * Get the subscriber wrapper for all loaded templates
    * NOTE: Once the network is setup, templates won't change very 
    *       frequently. Keep that in mind when using this method.
    * 
@@ -74,6 +75,13 @@ export class ApiService {
         .flatMap(() => {
           return this.getTemplates();
         });
+  }
+
+  /**
+   * Get all installed modules
+   */
+  getModules(): Observable<any> {
+    return null;
   }
 
 }
