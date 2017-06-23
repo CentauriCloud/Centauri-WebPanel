@@ -79,8 +79,17 @@ export class ApiService {
 
   /**
    * Get all installed modules
+   * @returns {Observable}
    */
   getModules(): Observable<any> {
+    return null;
+  }
+
+  /**
+   * Get the current version CentauriCloud
+   * @returns {Observable}
+   */
+  getCentauriVersion(): Observable<any> {
     return null;
   }
 
