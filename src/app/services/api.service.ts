@@ -54,4 +54,27 @@ export class ApiService {
         });
   }
 
+  /**
+   * Get templates currently loaded on the network
+   * @returns {Observable}
+   */
+  getTemplates(): Observable<any> {
+    return null;
+  }
+
+  /**
+   * Getr the subscriber wrapper for all loaded templates
+   * NOTE: Once the network is setup, templates won't change very 
+   *       frequently. Keep that in mind when using this method.
+   * 
+   * @param {Number} interval Refresh pull interval
+   */
+  getTemplatesSubscriber(interval = ApiService.INTERVAL): Observable<any> {
+    return Observable
+        .interval(interval)
+        .flatMap(() => {
+          return this.getTemplates();
+        });
+  }
+
 }
