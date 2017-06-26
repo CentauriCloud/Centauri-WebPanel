@@ -78,6 +78,26 @@ export class ApiService {
   }
 
   /**
+   * Get all users currently registered in the system
+   * @return {Observable}
+   */
+  getUsers(): Observable<any>{
+    return null;
+  }
+
+  /**
+   * Get the subscriber wrapper for all users
+   * @param {Number} interval Refresh pull interval 
+   */
+  getUsersSubscriber(interval= ApiService.INTERVAL): Observable<any> {
+    return Observable
+      .interval(interval)
+      .flatMap(() => {
+        return this.getUsers();
+      })
+  }
+
+  /**
    * Get all installed modules
    * @returns {Observable}
    */
