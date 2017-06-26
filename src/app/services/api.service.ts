@@ -94,7 +94,7 @@ export class ApiService {
         .interval(interval)
         .flatMap(() => {
           return this.getUsers();
-        })
+        });
   }
 
   /**
@@ -117,7 +117,27 @@ export class ApiService {
         .interval(interval)
         .flatMap(() => {
           return this.getOnlinePlayers();
-        })
+        });
+  }
+
+  /**
+   * Get a list of all currently connected BungeeCord servers
+   * @returns {Observable}
+   */
+  getLobbys(): Observable<any> {
+    return null;
+  }
+
+  /**
+   * Get the subscriber for all connected BungeeCord servers
+   * @param {Number} interval 
+   */
+  getLobbySubscriber(interval = ApiService.INTERVAL): Observable<any> {
+    return Observable
+        .interval(interval)
+        .flatMap(() => {
+          return this.getLobbys();
+        });
   }
 
   /**
