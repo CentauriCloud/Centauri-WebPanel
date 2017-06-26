@@ -91,10 +91,33 @@ export class ApiService {
    */
   getUsersSubscriber(interval= ApiService.INTERVAL): Observable<any> {
     return Observable
-      .interval(interval)
-      .flatMap(() => {
-        return this.getUsers();
-      })
+        .interval(interval)
+        .flatMap(() => {
+          return this.getUsers();
+        })
+  }
+
+  /**
+   * Get the current count of players on the network
+   * 
+   * TODO: Implement pagination and site player limit
+   * @returns {Observable}
+   */
+  getOnlinePlayers(): Observable<any> {
+    return null;
+  }
+
+  /**
+   * Get the subscriber for the player count
+   * @param {Number} interval Refresh interval
+   * @returns {Observable} 
+   */
+  getOnlinePlayersSubscriber(interval = ApiService.INTERVAL): Observable<any> {
+    return Observable
+        .interval(interval)
+        .flatMap(() => {
+          return this.getOnlinePlayers();
+        })
   }
 
   /**
