@@ -156,4 +156,28 @@ export class ApiService {
     return null;
   }
 
+  /**
+   * Get update information for the CentauriCloud software
+   * @returns {Observable}
+   */
+  getCloudUpdates(): Observable<any> {
+    return null;
+  }
+
+  /**
+   * Get update information for the webpanel
+   * @returns {Observable} 
+   */
+  getWebpanelUpdates(): Observable<any> {
+    return null;
+  }
+
+  /**
+   * Get news all around the CentauriCloud project
+   * @returns {Observable}
+   */
+  getNews(): Observable<any> {
+    return null;
+  }
+
 }
