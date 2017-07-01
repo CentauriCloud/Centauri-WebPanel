@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
+import { UrlBuilderService } from './services/url-builder.service';
 
 import { AppComponent } from './app.component';
 
@@ -19,7 +20,8 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     ApiService,
-    AuthService
+    AuthService,
+    UrlBuilderService
   ],
   bootstrap: [AppComponent]
 })
