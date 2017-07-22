@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { ApiService } from './services/api.service';
-import { AuthService } from './services/auth.service';
-import { UrlBuilderService } from './services/url-builder.service';
-
 import { AppComponent } from './app.component';
+
+import { ErrorService } from './services/error.service';
+import { NetworkService } from './services/network.service';
+import { UserService } from './services/user.service';
+import { ServerService } from './services/server.service';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { AppComponent } from './app.component';
     HttpModule
   ],
   providers: [
-    ApiService,
-    AuthService,
-    UrlBuilderService
+    ErrorService,
+    NetworkService,
+    UserService, 
+    ServerService
   ],
   bootstrap: [AppComponent]
 })
